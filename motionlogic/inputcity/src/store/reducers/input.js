@@ -10,7 +10,6 @@ const initialState = {
 
 export default function cityReducer(state = initialState, action) {
     if(action.type === LOCALSTORAGE_SET) window.localStorage.setItem('cityChoose', JSON.stringify(state.cityChoose))
-    // if (action.type === ) state.cityChoose.filter(element => element !== action.city)
     switch(action.type) {
         case FETCH_CITY_START: 
             return {
@@ -30,11 +29,15 @@ export default function cityReducer(state = initialState, action) {
             }
         case ADD_CITY: 
             return {
-                ...state, cityChoose: state.cityChoose.concat(action.city)
+                ...state, 
+                cityChoose: state.cityChoose.concat(action.city),
+                city: state.city.filter(element => element !== action.city)
             }
         case REMOVE_CITY: 
             return {
-            ...state, cityChoose: state.cityChoose.filter(element => element !== action.city)
+            ...state, 
+            cityChoose: state.cityChoose.filter(element => element !== action.city),
+            city: state.city.concat(action.city)
         }
         default: 
             return state

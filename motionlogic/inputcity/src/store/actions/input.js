@@ -23,6 +23,7 @@ export function fetchCity() {
 export function addCityLocal(city) {
     return dispatch => {
         dispatch(addCity(city))
+        
         dispatch(localStorageSet())
     }
 }

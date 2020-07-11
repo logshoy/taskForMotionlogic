@@ -13,7 +13,6 @@ class forminput extends React.Component {
         console.log(city)
         this.props.addCityLocal(city)
         this.props.searchInput('')
-        // window.localStorage.setItem('cityChoose', JSON.stringify(this.props.choose))
     }
 
     removeCityHandler(city) {
@@ -23,6 +22,7 @@ class forminput extends React.Component {
     renderCity = () => { 
 
             return this.props.city
+                .sort()
                 .filter(city => city.toLowerCase().includes(this.props.search))
                 .map(city => {               
                     return (
