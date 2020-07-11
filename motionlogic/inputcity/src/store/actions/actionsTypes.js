@@ -4,5 +4,9 @@ export const ADD_CITY = 'ADD_CITY'
 export const REMOVE_CITY = 'REMOVE_CITY'
 
 export const SEARCH_INPUT = 'SEARCH_INPUT'
+export const LOCALSTORAGE_SET = 'LOCALSTORAGE_SET'
+export const LOCALSTORAGE_GET = 'LOCALSTORAGE_GET'
+
+
 
 

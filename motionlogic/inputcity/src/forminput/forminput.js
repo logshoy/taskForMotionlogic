@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {fetchCity, addCity, removeCity, searchInput} from '../store/actions/input';
+import {fetchCity, addCityLocal, removeCityLocal, searchInput} from '../store/actions/input';
 
 
 class forminput extends React.Component {
@@ -11,12 +11,13 @@ class forminput extends React.Component {
 
     addCityHandler(city) {
         console.log(city)
-        this.props.addCity(city)
+        this.props.addCityLocal(city)
         this.props.searchInput('')
+        // window.localStorage.setItem('cityChoose', JSON.stringify(this.props.choose))
     }
 
     removeCityHandler(city) {
-        this.props.removeCity(city)
+        this.props.removeCityLocal(city)
     }
 
     renderCity = () => { 
@@ -85,8 +86,8 @@ function mapStateToProps(state) {
 function mapDispathToProps(dispatch) {
     return {
         fetchCity: () => dispatch(fetchCity()),
-        addCity: city => dispatch(addCity(city)),
-        removeCity: city => dispatch(removeCity(city)),
+        addCityLocal: city => dispatch(addCityLocal(city)),
+        removeCityLocal: city => dispatch(removeCityLocal(city)),
         searchInput: value => dispatch(searchInput(value))
     }
 }

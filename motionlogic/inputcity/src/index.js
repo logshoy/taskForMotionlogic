@@ -21,6 +21,7 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk))
 )
 
+
 const app = (
   <Provider store={store}>
       <App />

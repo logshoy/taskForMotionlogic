@@ -1,8 +1,8 @@
-import {FETCH_CITY_START, FETCH_CITY_END , ADD_CITY, REMOVE_CITY, SEARCH_INPUT} from './actionsTypes'
+import {FETCH_CITY_START, FETCH_CITY_END , ADD_CITY, REMOVE_CITY, SEARCH_INPUT, LOCALSTORAGE_SET, LOCALSTORAGE_GET} from './actionsTypes'
 import cityJSON from '../../russian-cities.json'
 
 export function fetchCity() {
-    return async dispatch => {
+    return dispatch => {
         dispatch(fetchCityStart())
         try {
             const response = cityJSON
@@ -13,16 +13,39 @@ export function fetchCity() {
 
             })
             dispatch(fetchCityEnd(citys))
+            dispatch(localStorageGet())
         } catch (e) {
             console.log(e)
         }
     }
 }
 
-// export function addCityLocal(city) {
-//     localStorage.setItem('city',city)
-//     dispatch(addCity(city))
-// }
+export function addCityLocal(city) {
+    return dispatch => {
+        dispatch(addCity(city))
+        dispatch(localStorageSet())
+    }
+}
+
+export function removeCityLocal(city) {
+    console.log('gg')
+    return dispatch => {
+        dispatch(removeCity(city))
+        dispatch(localStorageSet())
+    }
+}
+
+export function localStorageSet() {
+    return {
+        type: LOCALSTORAGE_SET
+    }
+}
+
+export function localStorageGet() {
+    return {
+        type: LOCALSTORAGE_GET
+    }
+}
 
 export function fetchCityStart() {
     return {
