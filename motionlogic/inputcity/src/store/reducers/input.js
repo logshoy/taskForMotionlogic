@@ -1,5 +1,7 @@
 import {FETCH_CITY_START, FETCH_CITY_END, ADD_CITY, REMOVE_CITY, SEARCH_INPUT } from '../actions/actionsTypes'
 
+// let cityChoose = window.localStorage.getItem('cityChoose');
+
 const initialState = {
     city: [],
     search : '',
@@ -22,11 +24,11 @@ export default function cityReducer(state = initialState, action) {
             }
         case ADD_CITY: 
             return {
-                ...state, cityChoose: action.city
+                ...state, cityChoose: state.cityChoose.concat(action.city)
             }
         case REMOVE_CITY: 
             return {
-                ...state, city: action.city
+                ...state, cityСhoose: state.cityChoose.filter(element => element !== action.city)
             }
         default: 
             return state

@@ -16,6 +16,7 @@ class search extends React.Component {
         return( 
             <div>
             <input
+                // value = {term}
                 type="text"
                 placeholder="Search people by name..."
                 onChange={dataSearch}

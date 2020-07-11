@@ -1,4 +1,4 @@
-import {FETCH_CITY_START, FETCH_CITY_END , ADD_CITY, SEARCH_INPUT} from './actionsTypes'
+import {FETCH_CITY_START, FETCH_CITY_END , ADD_CITY, REMOVE_CITY, SEARCH_INPUT} from './actionsTypes'
 import cityJSON from '../../russian-cities.json'
 
 export function fetchCity() {
@@ -19,6 +19,10 @@ export function fetchCity() {
     }
 }
 
+// export function addCityLocal(city) {
+//     localStorage.setItem('city',city)
+//     dispatch(addCity(city))
+// }
 
 export function fetchCityStart() {
     return {
@@ -34,7 +38,6 @@ export function fetchCityEnd(citys) {
 }
 
 export function searchInput(search) {
-    console.log('gg')
     return {
         type: SEARCH_INPUT,
         search
@@ -44,6 +47,13 @@ export function searchInput(search) {
 export function addCity(city) {
     return {
         type: ADD_CITY,
+        city
+    }
+}
+
+export function removeCity(city) {
+    return {
+        type: REMOVE_CITY,
         city
     }
 }
