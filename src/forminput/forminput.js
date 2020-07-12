@@ -10,8 +10,7 @@ class forminput extends React.Component {
         this.props.fetchCity()
     }
 
-    addCityHandler(city) {
-        console.log(city)
+    addCityHandler(city) { 
         this.props.addCityLocal(city)
         this.props.searchInput('')
     }
@@ -29,7 +28,7 @@ class forminput extends React.Component {
             <ul className={classes.listCity}> { arrCity
                 .map(city => {               
                     return (
-                    <li onClick={this.addCityHandler.bind(this, city)}>
+                    <li key={city} onClick={this.addCityHandler.bind(this, city)}>
                             {city}
                     </li>
                     )

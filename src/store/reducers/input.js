@@ -1,6 +1,12 @@
 import {FETCH_CITY_START, FETCH_CITY_END, ADD_CITY, REMOVE_CITY, SEARCH_INPUT, LOCALSTORAGE_SET, LOCALSTORAGE_GET } from '../actions/actionsTypes'
 
-let cityChooseLocal = Array.from(JSON.parse(window.localStorage.getItem('cityChoose')))
+let cityChooseLocal
+
+if (window.localStorage.getItem('cityChoose') !== null) {
+    cityChooseLocal = Array.from(JSON.parse(window.localStorage.getItem('cityChoose')))
+} else {
+    cityChooseLocal = []
+}
 
 const initialState = {
     city: [],
