@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e1d62444eb512c88053924288af0d211",
+    "revision": "01a35b702929b32de466f7f90c96e4d6",
     "url": "/taskForMotionlogic/index.html"
   },
   {
-    "revision": "e04a6af784b4061ee59f",
+    "revision": "a2d0c306d8dd44920a14",
     "url": "/taskForMotionlogic/static/css/main.24252004.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/taskForMotionlogic/static/js/2.c8b29b13.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e04a6af784b4061ee59f",
-    "url": "/taskForMotionlogic/static/js/main.4e887c44.chunk.js"
+    "revision": "a2d0c306d8dd44920a14",
+    "url": "/taskForMotionlogic/static/js/main.319df3d5.chunk.js"
   },
   {
     "revision": "b70505af9248d91f7f68",

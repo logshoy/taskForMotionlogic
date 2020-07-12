@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/taskForMotionlogic/static/css/main.24252004.chunk.css",
-    "main.js": "/taskForMotionlogic/static/js/main.4e887c44.chunk.js",
-    "main.js.map": "/taskForMotionlogic/static/js/main.4e887c44.chunk.js.map",
+    "main.js": "/taskForMotionlogic/static/js/main.319df3d5.chunk.js",
+    "main.js.map": "/taskForMotionlogic/static/js/main.319df3d5.chunk.js.map",
     "runtime-main.js": "/taskForMotionlogic/static/js/runtime-main.e121f0ac.js",
     "runtime-main.js.map": "/taskForMotionlogic/static/js/runtime-main.e121f0ac.js.map",
     "static/js/2.c8b29b13.chunk.js": "/taskForMotionlogic/static/js/2.c8b29b13.chunk.js",
     "static/js/2.c8b29b13.chunk.js.map": "/taskForMotionlogic/static/js/2.c8b29b13.chunk.js.map",
     "index.html": "/taskForMotionlogic/index.html",
-    "precache-manifest.f98aaf14d051d93b7d218b37f7038ed4.js": "/taskForMotionlogic/precache-manifest.f98aaf14d051d93b7d218b37f7038ed4.js",
+    "precache-manifest.4822a7b26fcae15d392d4b355f570dd3.js": "/taskForMotionlogic/precache-manifest.4822a7b26fcae15d392d4b355f570dd3.js",
     "service-worker.js": "/taskForMotionlogic/service-worker.js",
     "static/css/main.24252004.chunk.css.map": "/taskForMotionlogic/static/css/main.24252004.chunk.css.map",
     "static/js/2.c8b29b13.chunk.js.LICENSE.txt": "/taskForMotionlogic/static/js/2.c8b29b13.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e121f0ac.js",
     "static/js/2.c8b29b13.chunk.js",
     "static/css/main.24252004.chunk.css",
-    "static/js/main.4e887c44.chunk.js"
+    "static/js/main.319df3d5.chunk.js"
   ]
 }
