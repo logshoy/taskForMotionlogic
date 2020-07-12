@@ -21,24 +21,22 @@ class forminput extends React.Component {
     }
 
     renderCity = () => { 
-  
-            return this.props.city
-                .sort()
-                .filter(city => city.toLowerCase().startsWith(this.props.search.toLowerCase()))
+    const arrCity = this.props.city
+        .sort()
+        .filter(city => city.toLowerCase().startsWith(this.props.search.toLowerCase()))
+        if (this.props.search.length >= 3 && arrCity.length > 0) {
+        return (
+            <ul className={classes.listCity}> { arrCity
                 .map(city => {               
                     return (
-                    <li 
-                        className={classes.listCity}  
-                    >
-                        <a
-                            onClick={this.addCityHandler.bind(this, city)}
-                        >
+                    <li onClick={this.addCityHandler.bind(this, city)}>
                             {city}
-                        </a>
                     </li>
                     )
-                })
-    }
+                })}
+            </ul>)
+        }
+    }        
 
 
     render() {
@@ -60,9 +58,7 @@ class forminput extends React.Component {
                         placeholder="Введите город"
                         onChange={dataSearch}
                     />
-                    { this.props.search.length >= 3
-                        ? this.renderCity()
-                        : null } 
+                    { this.renderCity() } 
                     <h2>Выбранные города</h2>
                     <div className={classes.chooseList}>
                         {this.props.choose.map(city => {
@@ -78,10 +74,6 @@ class forminput extends React.Component {
                         })}
                     </div>
                 </form>
-                <h3>Список городов</h3>
-                { this.props.city
-                .sort()
-                .filter(city => city.toLowerCase().startsWith(this.props.search.toLowerCase()))}
             </div>
         )
     }
