@@ -1,6 +1,8 @@
 import {FETCH_CITY_START, FETCH_CITY_END , ADD_CITY, REMOVE_CITY, SEARCH_INPUT, LOCALSTORAGE_SET, LOCALSTORAGE_GET} from './actionsTypes'
 import cityJSON from '../../russian-cities.json'
 
+let cityChooseLocal = Array.from(JSON.parse(window.localStorage.getItem('cityChoose')))
+
 export function fetchCity() {
     return dispatch => {
         dispatch(fetchCityStart())
@@ -9,8 +11,7 @@ export function fetchCity() {
             const citys = []
             Object.keys(response).forEach(city => {
                 const ad = response[city]
-                citys.push(ad.name)
-
+                if (!cityChooseLocal.includes(ad.name)) citys.push(ad.name)
             })
             dispatch(fetchCityEnd(citys))
             dispatch(localStorageGet())

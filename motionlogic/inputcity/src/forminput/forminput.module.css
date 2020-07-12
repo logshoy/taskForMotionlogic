@@ -1,0 +1,62 @@
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.form {
+    padding: 20px;
+    border: 2px solid rgb(226, 193, 193);
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+input {
+    width: 550px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.listCity {
+    display: flex;
+    flex-direction: column;
+    position: absolute; 
+    padding: 0;
+    margin: 0 auto;
+    border: 1px solid #000; 
+    width: 550px;
+    z-index: 100;
+    box-sizing: border-box;
+    background-color: red;
+}
+
+
+
+.listCity a {
+    cursor: pointer;
+}
+
+.chooseList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chooseCity {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding-left: 10px;
+    margin: 5px;
+    position: relative;
+}
+
+.chooseCity a {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: red;
+    cursor: pointer;
+}
+
+.input .city {
+    position: absolute;
+ }

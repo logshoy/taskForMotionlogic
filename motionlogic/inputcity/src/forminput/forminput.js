@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import classes from './forminput.module.css'
 import {fetchCity, addCityLocal, removeCityLocal, searchInput} from '../store/actions/input';
 
 
@@ -20,19 +21,20 @@ class forminput extends React.Component {
     }
 
     renderCity = () => { 
-
+  
             return this.props.city
                 .sort()
-                .filter(city => city.toLowerCase().includes(this.props.search))
+                .filter(city => city.toLowerCase().startsWith(this.props.search.toLowerCase()))
                 .map(city => {               
                     return (
                     <li 
-                        key={city}   
+                        className={classes.listCity}  
                     >
-                        <button 
-                            onClick={this.addCityHandler.bind(this, city)}>
+                        <a
+                            onClick={this.addCityHandler.bind(this, city)}
+                        >
                             {city}
-                        </button>
+                        </a>
                     </li>
                     )
                 })
@@ -47,29 +49,39 @@ class forminput extends React.Component {
         }
 
         return( 
-            <div>
-                <h1>forminput</h1>
-                <div>
-                <input
-                    value = {this.props.search}
-                    type="text"
-                    placeholder="Search people by name..."
-                    onChange={dataSearch}
-                />
-                </div>
-                <h2>Подходящие города</h2>
-                <ul>
-                    { this.props.search.length >= 3 ? this.renderCity() : null} 
-                </ul>
-                <h2>Выбранные города</h2>
-                    {this.props.choose.map(city => {
-                        return(
-                            <li key={city}>
-                                {city}
-                                <button onClick={this.removeCityHandler.bind(this, city)}>x</button>
-                            </li>
-                        )
-                    })}
+            <div className={classes.container}>
+                <h1>Форма с инпутом для города</h1>
+                <form className={classes.form}>
+                    <h2>Введите город</h2>
+                    <input
+                        className={classes.input}
+                        value = {this.props.search}
+                        type="text"
+                        placeholder="Введите город"
+                        onChange={dataSearch}
+                    />
+                    { this.props.search.length >= 3
+                        ? this.renderCity()
+                        : null } 
+                    <h2>Выбранные города</h2>
+                    <div className={classes.chooseList}>
+                        {this.props.choose.map(city => {
+                            return(
+                                <span
+                                key={city}
+                                className={classes.chooseCity}
+                                >
+                                    {city}
+                                    <a onClick={this.removeCityHandler.bind(this, city)}>x</a>
+                                </span>
+                            )
+                        })}
+                    </div>
+                </form>
+                <h3>Список городов</h3>
+                { this.props.city
+                .sort()
+                .filter(city => city.toLowerCase().startsWith(this.props.search.toLowerCase()))}
             </div>
         )
     }

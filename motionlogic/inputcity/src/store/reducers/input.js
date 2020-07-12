@@ -1,6 +1,6 @@
 import {FETCH_CITY_START, FETCH_CITY_END, ADD_CITY, REMOVE_CITY, SEARCH_INPUT, LOCALSTORAGE_SET, LOCALSTORAGE_GET } from '../actions/actionsTypes'
 
-let cityChooseLocal = window.localStorage.getItem('cityChoose');
+let cityChooseLocal = Array.from(JSON.parse(window.localStorage.getItem('cityChoose')))
 
 const initialState = {
     city: [],
@@ -25,7 +25,7 @@ export default function cityReducer(state = initialState, action) {
             }
         case LOCALSTORAGE_GET:
             return {
-                ...state, cityChoose: Array.from(JSON.parse(cityChooseLocal))
+                ...state, cityChoose: cityChooseLocal
             }
         case ADD_CITY: 
             return {
