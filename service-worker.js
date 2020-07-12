@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/taskForMotionlogic/precache-manifest.16aae8a457534990bcc95815a35fbfb0.js"
+  "/taskForMotionlogic/precache-manifest.d4bb3d120926b81b304191e59338c9df.js"
 );
 
 self.addEventListener('message', (event) => {
